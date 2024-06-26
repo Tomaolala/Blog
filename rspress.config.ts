@@ -4,7 +4,7 @@ import { defineConfig } from 'rspress/config';
 export default defineConfig({
   // 文档根目录
   root: 'docs',
-  // base:'/Blog',
+  base:'/Blog',
   icon:'https://lf3-static.bytednsdoc.com/obj/eden-cn/rjhwzy/ljhwZthlaukjlkulzlp/rspress/rspress-navbar-logo-0904.png',
   logo: {
     light:
