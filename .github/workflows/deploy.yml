@@ -1,33 +1,59 @@
-# 当 docs 目录有改动，自动执行npm run upload
-name: upload-docs-modify
+name: Deploy Rspress site to Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - docs/**
+    branches: [main]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  upload:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-    env:
-      ACCESS_TOKEN: ${{ vars.ACCESS_TOKEN }}
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v4
-
-      - name: Install yarn
-        uses: yarn/action-setup@v2.4.0
-
-      - name: Set node version to 18
-        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+      - uses: pnpm/action-setup@v2 # pnpm is optional but recommended, you can also use npm / yarn
+        with:
+          version: 6
+          cache: pnpm
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "yarn"
+          cache: pnpm
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build with Rspress
+        run: |
+          pnpm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: doc_build
 
-      - name: Install deps
-        run: yarn install
-
-      - name: Upload docs
-        run: yarn upload
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
