@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "首页"
+  },
+  {
+    "type": "file",
+    "name": "abtest",
+    "label": "探讨ABtest"
+  }
+]

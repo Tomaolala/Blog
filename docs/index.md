@@ -7,11 +7,11 @@ hero:
   tagline: Code & Life
   actions:
     - theme: brand
-      text: 介绍
-      link: /zh/guide/introduction
+      text: Code
+      link: /code/index
     - theme: alt
-      text: 快速开始
-      link: /zh/guide/getting-started
+      text: Life
+      link: /life/index
 
 features:
   - title: 'MDX: 使用灵活语法编写内容'
