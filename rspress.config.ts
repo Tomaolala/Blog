@@ -2,10 +2,11 @@
 import { defineConfig } from 'rspress/config';
 import { pluginPreview } from '@rspress/plugin-preview';
 import readingtime from 'rspress-plugin-reading-time'
+import TocPlugins from 'rspress-plugin-toc'
 export default defineConfig({
   // 文档根目录
   root: 'docs',
-  // base:'/Blog',
+  base:'/Blog',
   icon:'https://lf3-static.bytednsdoc.com/obj/eden-cn/rjhwzy/ljhwZthlaukjlkulzlp/rspress/rspress-navbar-logo-0904.png',
   logo: {
     light:
@@ -34,7 +35,7 @@ export default defineConfig({
     markdown: {
       showLineNumbers: true,
     },
-    plugins:[pluginPreview(),readingtime()]
+    plugins:[pluginPreview(),readingtime(),TocPlugins()]
 });
 
 

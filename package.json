@@ -16,6 +16,7 @@
     "typescript": "^5.5.2"
   },
   "dependencies": {
-    "rspress-plugin-reading-time": "^0.3.0"
+    "rspress-plugin-reading-time": "^0.3.0",
+    "rspress-plugin-toc": "^0.3.0"
   }
 }

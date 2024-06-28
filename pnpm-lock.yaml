@@ -4,11 +4,13 @@ specifiers:
   '@rspress/plugin-preview': ^1.25.1
   rspress: ^1.25.0
   rspress-plugin-reading-time: ^0.3.0
+  rspress-plugin-toc: ^0.3.0
   ts-node: ^10.9.2
   typescript: ^5.5.2
 
 dependencies:
   rspress-plugin-reading-time: 0.3.0_rspress@1.25.1
+  rspress-plugin-toc: 0.3.0_rspress@1.25.1
 
 devDependencies:
   '@rspress/plugin-preview': 1.25.1
@@ -1112,6 +1114,10 @@ packages:
 
   /@types/estree/1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  /@types/extend/3.0.4:
+    resolution: {integrity: sha512-ArMouDUTJEz1SQRpFsT2rIw7DeqICFv5aaVzLSIYMYQSLcwcGOfT3VyglQs/p7K3F7fT4zxr0NWxYZIdifD6dA==}
+    dev: false
 
   /@types/hast/2.3.10:
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
@@ -2387,6 +2393,18 @@ packages:
       '@types/mdast': 4.0.4
     dev: false
 
+  /mdast-util-toc/6.1.1:
+    resolution: {integrity: sha512-Er21728Kow8hehecK2GZtb7Ny3omcoPUVrmObiSUwmoRYVZaXLR751QROEFjR8W/vAQdHMLj49Lz20J55XaNpw==}
+    dependencies:
+      '@types/extend': 3.0.4
+      '@types/mdast': 3.0.15
+      extend: 3.0.2
+      github-slugger: 2.0.0
+      mdast-util-to-string: 3.2.0
+      unist-util-is: 5.2.1
+      unist-util-visit: 4.1.2
+    dev: false
+
   /medium-zoom/1.1.0:
     resolution: {integrity: sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==}
 
@@ -3321,6 +3339,19 @@ packages:
     dependencies:
       '@rspress/shared': 1.25.1
       reading-time: 1.5.0
+      rspress: 1.25.1
+      rspress-plugin-devkit: 0.3.0_rspress@1.25.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /rspress-plugin-toc/0.3.0_rspress@1.25.1:
+    resolution: {integrity: sha512-BTgcYSaqzmOVkEudK8ufWmVbOA9J57oki0NgFuM0orRCBKdEoTKPtTi3TE3e9ng21sM/iRI7boi5WDnlNo/jHw==}
+    peerDependencies:
+      rspress: '*'
+    dependencies:
+      '@rspress/shared': 1.25.1
+      mdast-util-toc: 6.1.1
       rspress: 1.25.1
       rspress-plugin-devkit: 0.3.0_rspress@1.25.1
     transitivePeerDependencies:

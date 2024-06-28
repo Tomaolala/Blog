@@ -1,6 +1,10 @@
 [
   {
-    "text": "指南",
-    "link": "/guides/introduction"
+    "text": "Work",
+    "link": "/code/index"
+  },
+  {
+    "text": "Life",
+    "link": "/life/index"
   }
 ]
