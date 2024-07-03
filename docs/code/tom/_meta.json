@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "markdown",
+    "label": "markdown解析"
+  },
+  {
+    "type": "file",
+    "name": "H5_up",
+    "label": "H5性能优化解析"
+  },
+  {
+    "type": "file",
+    "name": "rightControl",
+    "label": "权限控制解析"
+  }
+]

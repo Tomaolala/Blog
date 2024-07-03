@@ -13,5 +13,10 @@
     "type": "dir",
     "name": "skillStack",
     "label": "技术栈"
+  },
+  {
+    "type": "dir",
+    "name": "tom",
+    "label": "原理解析"
   }
 ]

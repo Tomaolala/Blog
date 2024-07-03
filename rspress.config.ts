@@ -2,7 +2,6 @@
 import { defineConfig } from 'rspress/config';
 import { pluginPreview } from '@rspress/plugin-preview';
 import readingtime from 'rspress-plugin-reading-time'
-import TocPlugins from 'rspress-plugin-toc'
 export default defineConfig({
   // 文档根目录
   root: 'docs',
@@ -34,8 +33,9 @@ export default defineConfig({
     ]},
     markdown: {
       showLineNumbers: true,
+        checkDeadLinks: true,
     },
-    plugins:[pluginPreview(),readingtime(),TocPlugins()]
+    plugins:[pluginPreview(),readingtime()]
 });
 
 
