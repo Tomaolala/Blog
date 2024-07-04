@@ -5,11 +5,6 @@
     "label": "首页"
   },
   {
-    "type": "file",
-    "name": "abtest",
-    "label": "探讨ABtest"
-  },
-  {
     "type": "dir",
     "name": "skillStack",
     "label": "技术栈"

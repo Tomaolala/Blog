@@ -13,5 +13,10 @@
     "type": "file",
     "name": "rightControl",
     "label": "权限控制解析"
+  },
+  {
+    "type": "file",
+    "name": "abtest",
+    "label": "探讨ABtest"
   }
 ]
