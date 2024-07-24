@@ -3,5 +3,10 @@
     "type": "dir",
     "name": "2024",
     "label": "2024年"
+  },
+  {
+    "type": "dir",
+    "name": "skills",
+    "label": "技术"
   }
 ]
